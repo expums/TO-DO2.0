@@ -7,3 +7,12 @@ closeModal.onclick = () => modal.style.display = "none";
 window.onclick = (e) => {
     if (e.target === modal) modal.style.display = "none";
 };
+
+const themeButton = document.querySelector(".theme-button");
+
+themeButton.onclick = () => {
+    document.body.classList.toggle("dark-theme");
+};
+
+
+

@@ -3,17 +3,13 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
-
 .container {
     height: 750px;
     width: 1510px;
 }
-
 .title {
     text-align: center;
 }
-
-
 .controls {
     display: flex;
     text-align: center;
@@ -32,7 +28,6 @@ body {
     border: 1px solid #6c63ff;
     padding-right: 30px;
 }
-
 .search-icon {
     position: absolute;
     right: 5px;
@@ -47,7 +42,6 @@ body {
     border-radius: 3px;
     color: white;
 }
-
 .theme-button {
     width: 30px;
     height: 30px;
@@ -55,8 +49,6 @@ body {
     border: none;
     border-radius: 3px;
 }
-
-
 .note {
     display: flex;
     gap: 10px;
@@ -64,9 +56,6 @@ body {
     margin-left: 525px;
     margin-top: 30px;
 }
-
-
-
 .note-text {
     font-weight: 700;
     font-size: 18px;
@@ -101,8 +90,8 @@ body {
 .add-button {
     background: #7b5dfc;
     border: none;
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 24px;
+    padding: 6px 10px;
     cursor: pointer;
 }
 
@@ -166,4 +155,42 @@ body {
     background: #7b5dfc;
     color: white;
     margin-left: 0px;
+}
+
+.dark-theme {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+.dark-theme .modal-content {
+    background: #1e1e1e;
+    color: #fff;
+}
+
+.dark-theme .note-text {
+    color: #f5f5f5;
+}
+
+.dark-theme .search-input {
+    background-color: #1e1e1e;
+    color: #fff;
+    border: 1px solid #7b5dfc;
+}
+
+.dark-theme .filter-select,
+.dark-theme .theme-button,
+.dark-theme .add-button {
+    background-color: #7b5dfc;
+    color: #fff;
+}
+
+.dark-theme .cancel {
+    background: #1e1e1e;
+    color: #7b5dfc;
+    border-color: #7b5dfc;
+}
+
+.dark-theme .apply {
+    background: #7b5dfc;
+    color: #fff;
 }
