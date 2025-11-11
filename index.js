@@ -93,3 +93,28 @@ document.addEventListener("click", function (e) {
 });
 
 
+// реализация посика
+
+const search_input = document.getElementById("search");
+search_input.addEventListener("input", () => {
+    console.log(search_input.value)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
