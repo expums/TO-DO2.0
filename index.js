@@ -86,7 +86,7 @@ document.addEventListener("click", function (e) {
 
     if (editIcon) {
         editingNote = editIcon.closest(".note");
-        var currentText = editingNote.querySelector(".note-text").childNodes[0].nodeValue.trim();
+        var currentText = editingNote.querySelector(".note-text").childNodes[0].nodeValue;
         noteText.value = currentText;
         modal.style.display = "block";
     }
@@ -95,23 +95,48 @@ document.addEventListener("click", function (e) {
 
 // реализация посика
 
-const search_input = document.getElementById("search");
-search_input.addEventListener("input", () => {
-    console.log(search_input.value)
+// const search_input = document.getElementById("search");
+// search_input.addEventListener("input", () => {
+//     let listNotes = document.querySelectorAll(".list > label > p.note_text")
+//     for (let i = 0; i < listNotes.length; i++) {
+//         listNotes[i].parentElement.style.display = "block";
+//           if(!listNotes[i].innerText.includes(search_input.value)){
+//             listNotes[i].parentElement.style.display = "none";
+//           }
+
+//     }
+// })
+
+
+
+
+
+
+
+
+
+
+
+let search = document.getElementsByClassName("search-input")[0]
+search.addEventListener("input", function () {
+    let search_text = search.value
+    let notes = document.getElementsByClassName("note")
+    let separators = document.getElementsByClassName("separator")
+
+    if (/[^A-Za-zА-Яа-яЁё0-9 ]/.test(search_text)) {
+        alert("Только русские,английские буквы и цифры")
+        search.value = search_text.replace(/[^A-Za-zА-Яа-яЁё0-9 ]/g, '')
+        return
+    }
+    
+    for (let i = 0; i < notes.length; i++) {
+        let note_text = notes[i].getElementsByClassName("note-text")[0].innerText
+        let show = search_text === '' || note_text.toLowerCase().includes(search_text.toLowerCase())
+        
+        notes[i].classList.toggle("display-none", !show)
+        if (separators[i]) separators[i].classList.toggle("display-none", !show)
+    }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

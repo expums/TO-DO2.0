@@ -200,3 +200,7 @@ body {
 .note-checkbox:checked ~ p {
     text-decoration: line-through;
 }
+
+.display-none {
+    display: none !important;
+}
