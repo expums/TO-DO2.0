@@ -33,7 +33,7 @@ addNote.onclick = function () {
         editingNote.querySelector(".note-text").childNodes[0].nodeValue = text;
         editingNote = null;
     } else {
-        // создаём новую
+        // создание новой
         var note = document.createElement("div");
         note.className = "note";
         note.innerHTML = `
