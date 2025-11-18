@@ -9,7 +9,7 @@ const searchInput = document.querySelector(".search-input");
 const filterSelect = document.querySelector(".filter-select");
 const themeButton = document.querySelector(".theme-button");
 
-let editingNote = null; // храним редактируемую заметку, так посоветовали китайсие друзья
+let editingNote = null; // для хранения редакт заметки, так посоветовали китайские друзья
 
 //модалка
 openModalBtn.onclick = () => (modal.style.display = "block");
