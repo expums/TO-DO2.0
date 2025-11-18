@@ -12,14 +12,22 @@ const themeButton = document.querySelector(".theme-button");
 let editingNote = null; // для хранения редакт заметки, так посоветовали китайские друзья
 
 //модалка
-openModalBtn.onclick = () => (modal.style.display = "block");
-closeModalBtn.onclick = () => (modal.style.display = "none");
-window.onclick = (e) => {
-  if (e.target === modal) modal.style.display = "none";
-};
+openModalBtn.addEventListener("click", function () {
+  modal.style.display = "block";
+});
+
+closeModalBtn.addEventListener("click", function () {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
 
 // темы
-themeButton.onclick = () => {
+themeButton.addEventListener("click", function () {
   document.body.classList.toggle("dark-theme");
   const isDark = document.body.classList.contains("dark-theme");
 
@@ -31,10 +39,10 @@ themeButton.onclick = () => {
   } else {
     themeButton.innerHTML = moonIcon;
   }
-};
+});
 
 // добавить и редачить заметку
-addNoteBtn.onclick = () => {
+addNoteBtn.addEventListener("click", function () {
   const text = noteText.value.trim();
   if (!text) return;
 
@@ -42,7 +50,7 @@ addNoteBtn.onclick = () => {
     editingNote.querySelector(".note-text").textContent = text; // редачим существующую
     editingNote = null;
   } else {
-    const note = createNoteElement(text);  // создание новой
+    const note = createNoteElement(text); // создание новой
     const separator = createSeparator();
 
     noteList.insertBefore(note, openModalBtn);
@@ -51,7 +59,7 @@ addNoteBtn.onclick = () => {
 
   noteText.value = "";
   modal.style.display = "none";
-};
+});
 
 // создание заметки
 function createNoteElement(text) {
@@ -72,7 +80,6 @@ function createNoteElement(text) {
     </svg>
   `;
   return note;
-
 }
 
 // для создания делителя межуду заметок
@@ -85,7 +92,7 @@ function createSeparator() {
 }
 
 // удаление и редакчтирование
-document.addEventListener("click", (e) => {
+document.addEventListener("click", function (e) {
   // удаление заметки
   if (e.target.closest(".delete-icon")) {
     const note = e.target.closest(".note");
@@ -106,7 +113,7 @@ document.addEventListener("click", (e) => {
 });
 
 // поиск
-searchInput.addEventListener("input", () => {
+searchInput.addEventListener("input", function () {
   const searchText = searchInput.value;
 
   if (/[^A-Za-zА-Яа-яЁё0-9 ]/.test(searchText)) {
@@ -118,7 +125,7 @@ searchInput.addEventListener("input", () => {
   const notes = document.querySelectorAll(".note");
   const separators = document.querySelectorAll(".separator");
 
-  notes.forEach((note, i) => {
+  notes.forEach(function (note, i) {
     const noteText = note.querySelector(".note-text").textContent;
     const isMatch =
       searchText === "" ||
@@ -130,12 +137,12 @@ searchInput.addEventListener("input", () => {
 });
 
 // выпад.список
-filterSelect.addEventListener("change", () => {
+filterSelect.addEventListener("change", function () {
   const filterValue = filterSelect.value;
   const notes = document.querySelectorAll(".note");
   const separators = document.querySelectorAll(".separator");
 
-  notes.forEach((note, i) => {
+  notes.forEach(function (note, i) {
     const checkbox = note.querySelector(".note-checkbox");
     let shouldShow = true;
 
