@@ -1,5 +1,5 @@
-*{
-    
+* {
+
     font-weight: 500px;
 }
 
@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+
 }
 
 .container {
@@ -51,9 +51,9 @@ body {
     height: 30px;
     border-radius: 3px;
     color: white;
-   text-align: center;
-   font-weight: 500;
-   font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
 }
 
 .theme-button {
@@ -79,7 +79,7 @@ body {
 }
 
 .note-icon {
-   position: absolute;
+    position: absolute;
     cursor: pointer;
     margin-left: 440px;
 }
@@ -87,7 +87,7 @@ body {
 .edit-icon {
     position: absolute;
     margin-left: 410px;
-    
+
     cursor: pointer;
 }
 
@@ -176,12 +176,12 @@ body {
 }
 
 .dark-theme {
-    background-color: #121212;
+   background: #0c0c0c;
     color: #f5f5f5;
 }
 
 .dark-theme .modal-content {
-    background: #1e1e1e;
+    background: #0c0c0c;
     color: #fff;
 }
 
@@ -190,7 +190,7 @@ body {
 }
 
 .dark-theme .search-input {
-    background-color: #1e1e1e;
+    background: #0c0c0c;
     color: #fff;
     border: 1px solid #7b5dfc;
 }
@@ -203,7 +203,7 @@ body {
 }
 
 .dark-theme .cancel {
-    background: #1e1e1e;
+    background: #0c0c0c;
     color: #7b5dfc;
     border-color: #7b5dfc;
 }
@@ -213,8 +213,6 @@ body {
     color: #fff;
 }
 
-
-
 .note-checkbox:checked~p {
     text-decoration: line-through;
 }
@@ -222,6 +220,7 @@ body {
 .display-none {
     display: none !important;
 }
-.note_list{
-     word-wrap: break-word;
+
+.note_list {
+    word-wrap: break-word;
 }
